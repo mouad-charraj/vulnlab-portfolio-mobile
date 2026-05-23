@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VulnLab est une plateforme académique pour générer des laboratoires Android vulnérables, des APK de challenge, des quiz et des soumissions CTF." />
+  <title>VulnLab — Mobile Security Lab Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="VulnLab home">
+      <span class="brand-icon">VL</span>
+      <span class="brand-text">VulnLab</span>
+    </a>
+    <nav class="navlinks" aria-label="Navigation principale">
+      <a href="#mission">Mission</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#comparison">Comparaison</a>
+      <a href="#team">Équipe</a>
+    </nav>
+    <a class="top-cta" href="https://www.youtube.com/watch?v=fKVrczlnqhc" target="_blank" rel="noreferrer">Voir la démo</a>
+    <button class="menu-btn" aria-label="Ouvrir le menu" id="menuBtn">☰</button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-bg-orbit orbit-a"></div>
+      <div class="hero-bg-orbit orbit-b"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Projet académique · ENSA Marrakech · Génie Cyber-Défense</p>
+          <h1>Générer des laboratoires Android vulnérables, les distribuer et les évaluer.</h1>
+          <p class="hero-lead">
+            VulnLab est une plateforme web dockerisée qui transforme des modules de vulnérabilités mobiles en challenges pédagogiques complets : scénario, APK vulnérable, APK corrigé, quiz, indices, flag, write-up et suivi enseignant.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="https://github.com/Jettleee/apk_vulnerable_generator" target="_blank" rel="noreferrer">Repository GitHub</a>
+            <a class="btn ghost" href="https://www.youtube.com/watch?v=fKVrczlnqhc" target="_blank" rel="noreferrer">Démonstration YouTube</a>
+          </div>
+          <div class="signal-strip" aria-label="Caractéristiques clés">
+            <span>Android</span>
+            <span>CTF</span>
+            <span>APK Build</span>
+            <span>Docker</span>
+            <span>MIT</span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Aperçu VulnLab">
+          <div class="device-frame">
+            <img src="./assets/home.png" alt="Interface d'accueil VulnLab" />
+          </div>
+          <div class="metric-card card-a"><strong>8</strong><span>modules</span></div>
+          <div class="metric-card card-b"><strong>2</strong><span>APK par lab</span></div>
+          <div class="metric-card card-c"><strong>CTF</strong><span>quiz + flag</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mission" class="section mission-section">
+      <div class="container two-col">
+        <div>
+          <p class="section-label">Motivation</p>
+          <h2>Un outil de TP, pas seulement une application vulnérable.</h2>
+        </div>
+        <div class="mission-text">
+          <p>
+            Les applications vulnérables classiques aident à apprendre l’analyse Android, mais elles restent souvent fixes : même interface, mêmes secrets, même chemin de résolution. VulnLab ajoute une couche pédagogique complète autour de ces exercices : génération de challenge, consignes, indices progressifs, quiz, soumission et correction.
+          </p>
+          <p>
+            La plateforme cible les séances encadrées. Chaque lab utilise des données fictives et un périmètre autorisé afin de former les étudiants à l’observation, à la justification technique et à la remédiation, sans exposer de systèmes réels.
+          </p>
+        </div>
+      </div>
+      <div class="container value-grid">
+        <article><span>01</span><h3>Préparation rapide</h3><p>L’enseignant choisit un module, un niveau et le volume du quiz.</p></article>
+        <article><span>02</span><h3>APK contrôlés</h3><p>Le backend produit une version vulnérable et une version corrigée.</p></article>
+        <article><span>03</span><h3>Suivi pédagogique</h3><p>Les réponses, flags et write-ups sont centralisés pour la correction.</p></article>
+      </div>
+    </section>
+
+    <section id="workflow" class="section dark-panel-section">
+      <div class="container">
+        <div class="section-head centered">
+          <p class="section-label">Workflow</p>
+          <h2>De la création du challenge à l’évaluation.</h2>
+          <p>Le parcours sépare clairement le rôle enseignant et le rôle étudiant.</p>
+        </div>
+        <div class="workflow-map">
+          <div class="workflow-card"><b>1</b><h3>Configurer</h3><p>Choix du module, difficulté, nombre de questions et visibilité de la version corrigée.</p></div>
+          <div class="connector"></div>
+          <div class="workflow-card"><b>2</b><h3>Générer</h3><p>Création du scénario, des indices, du quiz, du flag et des artefacts exportables.</p></div>
+          <div class="connector"></div>
+          <div class="workflow-card"><b>3</b><h3>Analyser</h3><p>L’étudiant télécharge l’APK, observe le comportement et répond au quiz.</p></div>
+          <div class="connector"></div>
+          <div class="workflow-card"><b>4</b><h3>Soumettre</h3><p>Le flag et le write-up sont envoyés puis évalués par l’enseignant.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section interface-section">
+      <div class="container">
+        <div class="section-head split-head">
+          <div>
+            <p class="section-label">Interface</p>
+            <h2>Quelques écrans suffisent pour comprendre le produit.</h2>
+          </div>
+          <p>La galerie reste volontairement courte : elle montre les quatre moments clés sans surcharger la page.</p>
+        </div>
+        <div class="screen-grid clean-gallery">
+          <figure class="screen-card"><img src="./assets/admin-generate.png" alt="Génération d'un challenge dans VulnLab"><figcaption><strong>Génération enseignant</strong><span>Sélection du module, niveau, volume du quiz et préparation du challenge.</span></figcaption></figure>
+          <figure class="screen-card"><img src="./assets/student-overview.png" alt="Vue étudiante d'un challenge VulnLab"><figcaption><strong>Parcours étudiant</strong><span>Objectif, risque, consignes et accès aux activités du challenge.</span></figcaption></figure>
+          <figure class="screen-card"><img src="./assets/results.png" alt="Résultats d'un challenge VulnLab"><figcaption><strong>Résultats et correction</strong><span>Score, retour immédiat et éléments de suivi pédagogique.</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="section architecture-section">
+      <div class="container">
+        <div class="section-head centered">
+          <p class="section-label">Architecture</p>
+          <h2>Une architecture lisible pour un usage en laboratoire.</h2>
+          <p>Le frontend expose les interfaces, le backend orchestre la logique et la chaîne Android produit les APK installables.</p>
+        </div>
+        <div class="architecture-wrap">
+          <img src="./assets/architecture.png" alt="Architecture technique professionnelle de VulnLab" />
+        </div>
+        <div class="stack-grid">
+          <article><h3>Frontend</h3><p>React 18, Vite, TailwindCSS, routes enseignant et étudiant.</p></article>
+          <article><h3>Backend</h3><p>Node.js, Express, API REST, services de génération, scoring et export.</p></article>
+          <article><h3>Build Android</h3><p>JDK 17, Android SDK, aapt2, d8, zipalign et apksigner.</p></article>
+          <article><h3>Persistance</h3><p>Fichiers JSON pour modules, challenges et soumissions.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="comparison" class="section comparison-section">
+      <div class="container">
+        <div class="section-head split-head">
+          <div>
+            <p class="section-label">Positionnement</p>
+            <h2>Comparaison avec des solutions proches.</h2>
+          </div>
+          <p>VulnLab ne remplace pas les standards OWASP ni les applications volontairement vulnérables. Il ajoute une génération de labs, une distribution CTF et un suivi pédagogique autour d’APK Android.</p>
+        </div>
+        <div class="comparison-table" role="table" aria-label="Comparaison VulnLab avec des solutions existantes">
+          <div class="row header"><span>Critère</span><span>VulnLab</span><span>DIVA</span><span>InsecureBankv2</span><span>CTF classique</span></div>
+          <div class="row"><span>Génération de labs</span><strong>Oui</strong><em>Non</em><em>Non</em><em>Variable</em></div>
+          <div class="row"><span>APK vulnérable et corrigé</span><strong>Oui</strong><em>APK fixe</em><em>APK fixe</em><em>Non natif</em></div>
+          <div class="row"><span>Quiz et write-up</span><strong>Intégré</strong><em>Non</em><em>Non</em><em>Souvent séparé</em></div>
+          <div class="row"><span>Suivi enseignant</span><strong>Dashboard</strong><em>Non</em><em>Non</em><em>Scoring générique</em></div>
+          <div class="row"><span>Référentiel mobile</span><strong>OWASP MASVS/MASTG</strong><em>Exercices pratiques</em><em>Exercices pratiques</em><em>Dépend du contenu</em></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section roadmap-section">
+      <div class="container two-col align-start">
+        <div>
+          <p class="section-label">Évolution</p>
+          <h2>Vers des challenges plus variables et plus difficiles à mémoriser.</h2>
+          <p class="muted">La limitation principale actuelle est que la génération peut varier le contenu pédagogique et le flag, mais reste limitée pour produire automatiquement des interfaces Android différentes.</p>
+        </div>
+        <div class="roadmap-list">
+          <article><span>R1</span><div><h3>Agent de génération</h3><p>Créer un agent capable de produire automatiquement des variantes d’interface, de ressources, de textes et de chemins de résolution.</p></div></article>
+          <article><span>R2</span><div><h3>Positionnement dynamique du flag</h3><p>Changer l’emplacement du flag dans le code, les ressources, le manifeste, les logs ou la couche native.</p></div></article>
+          <article><span>R3</span><div><h3>Banque de scénarios</h3><p>Construire des templates multi-niveaux pour générer plusieurs labs équivalents sans répétition.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section video-section">
+      <div class="container video-layout">
+        <div>
+          <p class="section-label">Démonstration</p>
+          <h2>Parcours complet en vidéo.</h2>
+          <p>La démonstration montre la génération d’un challenge, l’accès étudiant, le téléchargement de l’APK, le quiz et le suivi des résultats.</p>
+          <a class="btn primary" href="https://www.youtube.com/watch?v=fKVrczlnqhc" target="_blank" rel="noreferrer">Ouvrir sur YouTube</a>
+        </div>
+        <a class="video-card" href="https://www.youtube.com/watch?v=fKVrczlnqhc" target="_blank" rel="noreferrer" aria-label="Ouvrir la démonstration VulnLab sur YouTube">
+          <img src="https://img.youtube.com/vi/fKVrczlnqhc/maxresdefault.jpg" alt="Aperçu de la démonstration VulnLab sur YouTube" onerror="this.src='https://img.youtube.com/vi/fKVrczlnqhc/hqdefault.jpg'">
+          <span class="play-button">▶</span>
+          <div class="video-caption"><strong>VulnLab demo</strong><small>Ouvrir la vidéo sur YouTube</small></div>
+        </a>
+      </div>
+    </section>
+
+    <section id="team" class="section team-section">
+      <div class="container">
+        <div class="section-head centered">
+          <p class="section-label">Équipe</p>
+          <h2>Auteurs du projet.</h2>
+          <p>Programme Génie Cyber-Défense et Systèmes de Télécommunications, ENSA Marrakech.</p>
+        </div>
+        <div class="team-grid">
+          <article class="member"><span>AX</span><h3>Bril Mohamed</h3><p>aka Axolotl</p></article>
+          <article class="member"><span>JT</span><h3>Charaf Youssef</h3><p>aka Jettlee</p></article>
+          <article class="member"><span>ZX</span><h3>Charraj Mouad</h3><p>aka z3r0-xr7</p></article>
+          <article class="member"><span>S4</span><h3>El Bekkali Ibtissam</h3><p>aka s4m</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><strong>VulnLab</strong><p>Générateur de laboratoires Android vulnérables par conception.</p></div>
+      <div class="footer-links"><a href="https://github.com/Jettleee/apk_vulnerable_generator" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.youtube.com/watch?v=fKVrczlnqhc" target="_blank" rel="noreferrer">Vidéo</a><a href="https://mas.owasp.org/" target="_blank" rel="noreferrer">OWASP MAS</a></div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
