@@ -7,7 +7,7 @@ Static portfolio page for the VulnLab academic project.
 
 The demonstration video is linked from YouTube:
 
-https://www.youtube.com/watch?v=fKVrczlnqhc
+https://www.youtube.com/watch?v=wfyONrTs5OE
 
 ## Main files
 
